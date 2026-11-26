@@ -50,6 +50,12 @@ stage('Test the code'){
     steps{
         sh 'mvn test'
     }
+    post{
+        success{
+            junit '**/target/surefire-reports/*.xml'
+        }
+     
+    }
 
 } 
 

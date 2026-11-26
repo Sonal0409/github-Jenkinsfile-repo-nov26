@@ -32,7 +32,6 @@ stage('Code Review'){
         success{
            echo 'Code review is successful'
            echo 'Generating pmd trend report in jenkins'
-        # warnign plugin will be used to generate the pmd trend report in jenkins
          recordIssues sourceCodeRetention: 'LAST_BUILD', tools: [pmdParser(pattern: '**/pmd.xml')]
         }
         failure{
